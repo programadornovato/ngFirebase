@@ -8,9 +8,13 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ListaComponent } from './components/lista/lista.component';
+import { AgregaComponent } from './components/agrega/agrega.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaComponent,
+    AgregaComponent
   ],
   imports: [
     BrowserModule,
