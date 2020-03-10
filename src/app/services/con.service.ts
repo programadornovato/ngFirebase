@@ -30,4 +30,8 @@ export class ConService {
     this.itemDoc=this.afs.doc<Item>("items/"+id);
     this.itemDoc.delete();
   }
+  editar(item){
+    this.itemDoc=this.afs.doc<Item>("items/"+item.id);
+    this.itemDoc.update(item);
+  }
 }
