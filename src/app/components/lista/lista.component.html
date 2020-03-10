@@ -1,3 +1,4 @@
 <div class="alert alert-primary" role="alert" *ngFor="let item of items" >
     {{item.name}}---{{item.id}}
+    <i class="fa fa-trash float-right text-danger" style="cursor: pointer;" (click)="eliminar(item.id)"></i>
 </div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection,AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 export interface Item { name: string; }
@@ -8,6 +8,7 @@ export interface Item { name: string; }
 })
 export class ConService {
   private itemsCollection: AngularFirestoreCollection<Item>;
+  private itemDoc:AngularFirestoreDocument<Item>;
   items: Observable<Item[]>;
   constructor(private afs: AngularFirestore) {
     this.itemsCollection = afs.collection<Item>('items');
@@ -24,5 +25,9 @@ export class ConService {
   }
   addItem(item: Item) {
     this.itemsCollection.add(item);
+  }
+  eliminar(id){
+    this.itemDoc=this.afs.doc<Item>("items/"+id);
+    this.itemDoc.delete();
   }
 }
