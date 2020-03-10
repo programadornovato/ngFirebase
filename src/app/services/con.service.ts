@@ -22,5 +22,7 @@ export class ConService {
   retornaItems(){
     return this.items;
   }
-
+  addItem(item: Item) {
+    this.itemsCollection.add(item);
+  }
 }

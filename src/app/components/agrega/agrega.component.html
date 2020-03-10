@@ -1,1 +1,7 @@
-<p>agrega works!</p>
+<form (ngSubmit)="agregar()" >
+    <div class="form-group">
+        <label for="">Nombre</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="item.name" >
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </div>
+</form>
